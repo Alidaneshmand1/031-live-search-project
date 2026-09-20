@@ -1,32 +1,32 @@
 <?php
+
 header("Access-Control-Allow-Origin: *");
-header("Contant-type : application/json");
+header("Content-Type: application/json");
+
 $json_string = file_get_contents("data.json");
-$books = json_decode($json_string,true);   
+$books = json_decode($json_string, true);
 
 if (!isset($_GET["find"])) {
     exit();
-}
-else{
- $find = strtolower ($_GET["find"]);
+} else {
+    $find = strtolower($_GET["find"]);
 }
 
 $output = array();
 $remain = array();
 
-
 foreach ($books as $book) {
-    if(substr_count($book["title"] , $find)){
+    if (substr_count(strtolower($book["title"]), $find)) {
         $output[] = $book;
-    }
-    else{
+    } else {
         $remain[] = $book;
     }
+}
+
+foreach ($remain as $book) {
+    if (substr_count(strtolower($book["description"]), $find)) {
+        $output[] = $book;
     }
+}
 
-    foreach ($remain as $book) {
-        if  (substr_count(strtolower($book["description"]) , $find)){
-            $output[] = $book;
-    }}
-
-    echo json_encode($output , JSON_PRETTY_PRINT); 
+echo json_encode($output, JSON_PRETTY_PRINT);
