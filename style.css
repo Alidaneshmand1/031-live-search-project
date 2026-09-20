@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#wrapper {
+    width: 960px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: rgb(156, 156, 154);
+}
+
+header{
+    background: darkcyan;
+    display: flex;
+    justify-content: center;
+}
+
+#search {
+    font-size: 28px;
+    padding: 4px;
+    margin: 50px;
+    width: 400px;
+    outline: none;    
+    border-radius: 5px;
+    border: 0.2px rgb(139, 138, 138) solid;
+}
+
+
+#results {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#main{
+    padding: 10px 0;
+}
+
+article{
+    background-color: rgb(214, 214, 214);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0 rgba(0,0,0,0);
+    margin: 20px 10px;
+}
+
+.title {
+    font-size: 28px;
+    color: blue;
+    margin-bottom: 5px;
+}
+
+.description{
+    font-size: 18px;
+}
