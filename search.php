@@ -2,7 +2,7 @@
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
-
+sleep(rand(1,5));
 $json_string = file_get_contents("data.json");
 $books = json_decode($json_string, true);
 
